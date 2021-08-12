@@ -3,15 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon --watch ./ backend/server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "cross-env NODE_ENV=production node ./backend/server.js",
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "4.2.1",
+    "@next/bundle-analyzer": "^9.1.4",
+    "antd": "4.3.0",
+    "axios": "^0.21.1",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
     "next": "11.0.1",
+    "nodemon": "^2.0.12",
+    "postcss-preset-env": "^6.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
+  },
+  "browser": {
+    "fs": false,
+    "path": false
   },
   "devDependencies": {
     "eslint": "7.32.0",
