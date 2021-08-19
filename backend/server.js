@@ -9,14 +9,18 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  //custom routing - khong ton tai trong thu muc pages nextjs
+  server.get("/test-backend", (req, res) => {
+    res.send("Welcome express nodeJS");
+  });
+
+  server.get("/nextjs", (req, res) => {
+    res.send("Welcome NextJS Framework");
+  });
+
   // xu ly tat ca cac routing trong thu muc pages nextjs
   server.all("*", (req, res) => {
     return handle(req, res);
-  });
-
-  //custom routing - khong ton tai trong thu muc pages nextjs
-  server.get("./test-backend", (req, res) => {
-    res.send("Welcome express nodeJS");
   });
 
   server.listen(port, (err) => {

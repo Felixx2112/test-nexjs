@@ -2,15 +2,16 @@
 
 import axios from "axios";
 import Link from "next/link";
+import MasterLayout from "../../components/master-layout";
 
 export default function ListUser({ result }) {
   console.log("Result: ", result);
   const { data } = result;
   console.log("Data: ", data);
   return (
-    <>
+    <MasterLayout sub1="Home" sub2="List" sub3="App">
       <h1>List User!!!</h1>
-      <table width="60%" border="1">
+      <table width="100%" border="1" textAlign="center">
         <thead>
           <tr>
             <th>Id</th>
@@ -38,7 +39,7 @@ export default function ListUser({ result }) {
           ))}
         </tbody>
       </table>
-    </>
+    </MasterLayout>
   );
 }
 
